@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Usługi & cennik — Ediline Studio | Manicure tytanowy Białystok</title>
+  <meta name="description" content="Cennik usług Ediline Studio — manicure tytanowy, hybryda, pedicure, zdobienia. Przejrzyste ceny, czas zabiegu, rezerwacja online przez Fresha." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── PAGE HERO (subpage) ─────────────────────────────── */
+    .page-hero {
+      padding: 160px 60px 80px;
+      background: var(--linen);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 600px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      margin-bottom: 18px;
+    }
+
+    .page-hero-lead {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      max-width: 480px;
+    }
+
+    /* ── SERVICES FULL ───────────────────────────────────── */
+    .services-full {
+      padding: var(--section-pad);
+    }
+
+    .services-category {
+      margin-bottom: 64px;
+    }
+
+    .services-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-label {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .services-table tr {
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+
+    .services-table tr:hover {
+      background: var(--linen);
+    }
+
+    .services-table td {
+      padding: 22px 16px;
+      vertical-align: middle;
+    }
+
+    .td-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      width: 35%;
+    }
+
+    .td-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      width: 40%;
+    }
+
+    .td-time {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-align: center;
+      width: 12%;
+    }
+
+    .td-price {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 300;
+      text-align: right;
+      white-space: nowrap;
+      width: 13%;
+    }
+
+    /* ── INFO STRIP ──────────────────────────────────────── */
+    .info-strip {
+      background: var(--linen);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 52px 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .info-block h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .info-block p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* ── BOOKING CTA ─────────────────────────────────────── */
+    .cta-band {
+      background: var(--text-primary);
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(26px, 3.5vw, 38px);
+      color: var(--cream);
+    }
+
+    .cta-band h2 em { font-style: italic; }
+
+    .cta-band-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .page-hero { padding: 130px 28px 52px; }
+      .services-full { padding: 52px 28px; }
+      .info-strip { grid-template-columns: 1fr; padding: 40px 28px; }
+      .cta-band { padding: 40px 28px; }
+
+      .services-table td { padding: 16px 8px; }
+      .td-name { font-size: 16px; }
+      .td-desc { display: none; }
+      .td-price { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════ -->
+  <header class="site-header scrolled" role="banner">
+    <a href="index.html" class="site-logo" style="color:var(--text-primary);">Ediline <em>Studio</em></a>
+
+    <nav class="site-nav" aria-label="Nawigacja główna">
+      <ul class="nav-links-group" style="display:flex; gap:32px; list-style:none; margin:0; padding:0;">
+        <li><a href="uslugi.html" style="color:var(--text-primary); font-weight:400;">Usługi</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="o-mnie.html">O mnie</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <a href="index.html#rezerwacja" class="nav-cta" style="border-color:var(--text-primary); color:var(--text-primary);">Zarezerwuj wizytę</a>
+    </nav>
+
+    <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══ PAGE HERO ════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="tag">Cennik</span>
+      <h1>Usługi<br>&amp; <em>ceny</em></h1>
+      <p class="page-hero-lead">
+        Wszystkie ceny są widoczne z góry — bez niespodzianek. Czas zabiegu jest orientacyjny i może się nieznacznie różnić w zależności od rodzaju stylizacji.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ USŁUGI PEŁNY CENNIK ══════════════════════════════════ -->
+  <main class="services-full">
+
+    <!-- MANICURE TYTANOWY -->
+    <div class="services-category">
+      <span class="category-label">Manicure tytanowy</span>
+      <table class="services-table" aria-label="Cennik manicure tytanowego">
+        <tbody>
+          <tr>
+            <td class="td-name">Aplikacja pełna</td>
+            <td class="td-desc">Przygotowanie płytki, modelowanie, kolor. Trwałość do 4 tygodni.</td>
+            <td class="td-time">ok. 60 min</td>
+            <!-- TODO: uzupełnij cenę -->
+            <td class="td-price">130 zł</td>
+          </tr>
+          <tr>
+            <td class="td-name">Uzupełnienie</td>
+            <!-- TODO: uzupełnij opis i cenę -->
+            <td class="td-desc">[TODO: opis uzupełnienia / korekty tytanowego]</td>
+            <td class="td-time">XX min</td>
+            <td class="td-price">XX zł</td>
+          </tr>
+          <tr>
+            <td class="td-name">Ściąganie</td>
+            <!-- TODO: uzupełnij opis i cenę -->
+            <td class="td-desc">[TODO: opis ściągania — bezpieczna procedura]</td>
+            <td class="td-time">XX min</td>
+            <td class="td-price">XX zł</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HYBRYDA -->
+    <div class="services-category">
+      <span class="category-label">Hybryda</span>
+      <table class="services-table" aria-label="Cennik hybrydy">
+        <tbody>
+          <!-- TODO: uzupełnij wszystkie pozycje hybrydy -->
+          <tr>
+            <td class="td-name">[TODO: nazwa]</td>
+            <td class="td-desc">[TODO: opis]</td>
+            <td class="td-time">XX min</td>
+            <td class="td-price">XX zł</td>
+          </tr>
+          <tr>
+            <td class="td-name">[TODO: nazwa]</td>
+            <td class="td-desc">[TODO: opis]</td>
+            <td class="td-time">XX min</td>
+            <td class="td-price">XX zł</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PEDICURE -->
+    <div class="services-category">
+      <span class="category-label">Pedicure</span>
+      <table class="services-table" aria-label="Cennik pedicure">
+        <tbody>
+          <!-- TODO: uzupełnij pozycje pedicure -->
+          <tr>
+            <td class="td-name">[TODO: nazwa]</td>
+            <td class="td-desc">[TODO: opis]</td>
+            <td class="td-time">XX min</td>
+            <td class="td-price">XX zł</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ZDOBIENIA -->
+    <div class="services-category">
+      <span class="category-label">Zdobienia</span>
+      <table class="services-table" aria-label="Cennik zdobień">
+        <tbody>
+          <!-- TODO: uzupełnij pozycje zdobień — french, wzorki, folie, brokat itp. -->
+          <tr>
+            <td class="td-name">[TODO: nazwa]</td>
+            <td class="td-desc">[TODO: opis]</td>
+            <td class="td-time">—</td>
+            <td class="td-price">od XX zł</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- ══ INFO STRIP ════════════════════════════════════════════ -->
+  <div class="info-strip">
+    <div class="info-block">
+      <h3>Odwołanie wizyty</h3>
+      <!-- TODO: uzupełnij politykę odwołań od Edyty -->
+      <p>[TODO: polityka odwołań — np. "Proszę o informację co najmniej 24h przed wizytą. Nieodwołana wizyta może być płatna."]</p>
+    </div>
+    <div class="info-block">
+      <h3>Sterylizacja narzędzi</h3>
+      <!-- TODO: uzupełnij od Edyty -->
+      <p>[TODO: informacja o sterylizacji — np. "Wszystkie narzędzia są sterylizowane przed każdym zabiegiem w autoklawie."]</p>
+    </div>
+    <div class="info-block">
+      <h3>Pytania?</h3>
+      <p>
+        <!-- TODO: uzupełnij numer -->
+        Napisz na <a href="https://wa.me/48TODO" style="border-bottom:1px solid var(--border);">WhatsApp</a>
+        lub <a href="https://m.me/EdilineStudioTytanow" style="border-bottom:1px solid var(--border);">Messenger</a> — odpowiem najszybciej jak mogę.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ CTA BAND ══════════════════════════════════════════════ -->
+  <div class="cta-band">
+    <h2>Gotowa na <em>trwałą stylizację?</em></h2>
+    <div class="cta-band-btns">
+      <a href="index.html#rezerwacja" class="btn btn-cream">Zarezerwuj wizytę</a>
+      <a href="galeria.html" class="btn btn-outline-light">Zobacz realizacje</a>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <a href="index.html" class="footer-logo">Ediline <em>Studio</em></a>
+    <nav class="footer-nav" aria-label="Nawigacja stopki">
+      <a href="uslugi.html">Usługi</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    </nav>
+    <div class="footer-right">
+      <p class="footer-copy">© 2025 Ediline Studio · Edyta Pisanko · Białystok</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/48TODO" class="wa-float" aria-label="Napisz na WhatsApp" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

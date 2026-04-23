@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>O mnie — Edyta Pisanko | Ediline Studio Białystok</title>
+  <meta name="description" content="Poznaj Edytę Pisanko — stylistkę paznokci specjalizującą się w manicure tytanowym w Białymstoku. Ediline Studio — doświadczenie, certyfikaty, wartości." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── INTRO SPLIT ─────────────────────────────────────── */
+    .intro-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+    }
+
+    .intro-photo {
+      position: relative;
+      background: var(--rose);
+      overflow: hidden;
+    }
+
+    .intro-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* TODO: zamień placeholder na <img src="img/edyta-portret.webp" alt="Edyta Pisanko — Ediline Studio"> */
+    .intro-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      background: linear-gradient(160deg, #C9A8A0 0%, #B8928A 55%, #A07870 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 32px;
+    }
+
+    .intro-photo-placeholder span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .intro-text {
+      padding: 120px 64px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--linen);
+    }
+
+    .intro-text h1 {
+      font-size: clamp(34px, 4vw, 52px);
+      margin-bottom: 6px;
+    }
+
+    .intro-subtitle {
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 36px;
+    }
+
+    .intro-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 2;
+      margin-bottom: 36px;
+    }
+
+    .intro-body p + p { margin-top: 1em; }
+
+    /* ── STATS ───────────────────────────────────────────── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .stat-item {
+      padding: 40px 32px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── VALUES ──────────────────────────────────────────── */
+    .values {
+      padding: var(--section-pad);
+      background: var(--linen);
+    }
+
+    .values .section-header {
+      margin-bottom: 48px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 36px 28px;
+    }
+
+    .value-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--accent);
+      opacity: 0.4;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .value-title {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .value-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── CERTS ───────────────────────────────────────────── */
+    .certs {
+      padding: var(--section-pad);
+    }
+
+    .certs .section-header {
+      margin-bottom: 40px;
+    }
+
+    .certs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 700px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-item:first-child { border-top: 1px solid var(--border); }
+
+    .cert-year {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--accent);
+      min-width: 48px;
+      flex-shrink: 0;
+    }
+
+    .cert-name {
+      font-size: 13px;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .cert-org {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ── PHILOSOPHY ──────────────────────────────────────── */
+    .philosophy {
+      background: var(--text-primary);
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .philosophy blockquote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      max-width: 680px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+
+    .philosophy cite {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-style: normal;
+    }
+
+    /* ── CTA BAND ────────────────────────────────────────── */
+    .cta-band {
+      background: var(--linen);
+      border-top: 1px solid var(--border);
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--text-primary);
+    }
+
+    .cta-band h2 em { font-style: italic; }
+
+    .cta-band-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .intro-split { grid-template-columns: 1fr; }
+      .intro-text { padding: 60px 28px; }
+      .intro-photo-placeholder { min-height: 360px; }
+
+      .stats-row { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+
+      .values-grid { grid-template-columns: 1fr; }
+      .cta-band { padding: 40px 28px; }
+      .philosophy { padding: 60px 28px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════ -->
+  <header class="site-header scrolled" role="banner">
+    <a href="index.html" class="site-logo" style="color:var(--text-primary);">Ediline <em>Studio</em></a>
+
+    <nav class="site-nav" aria-label="Nawigacja główna">
+      <ul class="nav-links-group" style="display:flex; gap:32px; list-style:none; margin:0; padding:0;">
+        <li><a href="uslugi.html">Usługi</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="o-mnie.html" style="color:var(--text-primary); font-weight:400;">O mnie</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <a href="index.html#rezerwacja" class="nav-cta" style="border-color:var(--text-primary); color:var(--text-primary);">Zarezerwuj wizytę</a>
+    </nav>
+
+    <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══ INTRO SPLIT ══════════════════════════════════════════ -->
+  <section class="intro-split">
+    <div class="intro-photo">
+      <!-- TODO: zamień na <img src="img/edyta-portret.webp" alt="Edyta Pisanko — stylistka paznokci, Białystok"> -->
+      <div class="intro-photo-placeholder">
+        <span>Zdjęcie Edyty — TODO</span>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      <span class="tag">O mnie</span>
+      <h1>Edyta<br><em>Pisanko</em></h1>
+      <p class="intro-subtitle">Stylistka paznokci · Białystok</p>
+
+      <!-- TODO: uzupełnij bio od Edyty — poniżej przykładowa struktura -->
+      <div class="intro-body">
+        <p>[TODO: Akapit 1 — ile lat doświadczenia, skąd specjalizacja w manicure tytanowym, co skłoniło Edytę do wyboru tej techniki. Konkretnie, bez "pasji".]</p>
+        <p>[TODO: Akapit 2 — co wyróżnia Edytę na tle konkurencji — podejście do klientki, dbałość o płytkę, higiena, indywidualne doradztwo.]</p>
+        <p>[TODO: Akapit 3 — coś osobistego, ale związanego z pracą — np. dlaczego lubi tę pracę, co sprawia że każda wizyta jest inna.]</p>
+      </div>
+
+      <a href="index.html#rezerwacja" class="btn btn-dark">Zarezerwuj wizytę</a>
+    </div>
+  </section>
+
+  <!-- ══ STATS ════════════════════════════════════════════════ -->
+  <div class="stats-row" role="list" aria-label="Liczby Ediline Studio">
+    <div class="stat-item" role="listitem">
+      <!-- TODO: uzupełnij od Edyty -->
+      <div class="stat-num">XX+</div>
+      <div class="stat-label">lat doświadczenia</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <!-- TODO: uzupełnij od Edyty -->
+      <div class="stat-num">XXX+</div>
+      <div class="stat-label">zadowolonych klientek</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <!-- TODO: uzupełnij od Edyty -->
+      <div class="stat-num">XX+</div>
+      <div class="stat-label">ukończonych szkoleń</div>
+    </div>
+  </div>
+
+  <!-- ══ WARTOŚCI ═════════════════════════════════════════════ -->
+  <section class="values">
+    <div class="section-header">
+      <span class="tag">Jak pracuję</span>
+      <h2 class="section-title">Zasady<br><em>Ediline Studio</em></h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <p class="value-title">Bezpieczeństwo przede wszystkim</p>
+        <!-- TODO: uzupełnij lub dostosuj do wartości Edyty -->
+        <p class="value-desc">Sterylizacja narzędzi przed każdą wizytą. Używam wyłącznie sprawdzonych produktów od certyfikowanych dostawców.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <p class="value-title">Indywidualne podejście</p>
+        <p class="value-desc">[TODO: opis podejścia Edyty do klientki — doradztwo, dostosowanie do potrzeb, rozmowa przed zabiegiem.]</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <p class="value-title">Czas na Ciebie</p>
+        <p class="value-desc">[TODO: opis jak Edyta traktuje czas klientki — punktualność, skupienie, bez pośpiechu.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CERTYFIKATY & SZKOLENIA ══════════════════════════════ -->
+  <section class="certs">
+    <div class="section-header">
+      <span class="tag">Kwalifikacje</span>
+      <h2 class="section-title">Szkolenia<br>&amp; <em>certyfikaty</em></h2>
+    </div>
+
+    <div class="certs-list">
+      <!-- TODO: uzupełnij realnymi szkoleniami i certyfikatami Edyty -->
+      <div class="cert-item">
+        <span class="cert-year">TODO</span>
+        <div>
+          <p class="cert-name">[TODO: Nazwa szkolenia / certyfikatu]</p>
+          <p class="cert-org">[TODO: Organizator / firma]</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <span class="cert-year">TODO</span>
+        <div>
+          <p class="cert-name">[TODO: Nazwa szkolenia / certyfikatu]</p>
+          <p class="cert-org">[TODO: Organizator]</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <span class="cert-year">TODO</span>
+        <div>
+          <p class="cert-name">[TODO: Nazwa szkolenia / certyfikatu]</p>
+          <p class="cert-org">[TODO: Organizator]</p>
+        </div>
+      </div>
+      <!-- Dodaj kolejne wiersze według potrzeb -->
+    </div>
+  </section>
+
+  <!-- ══ FILOZOFIA / CYTAT ════════════════════════════════════ -->
+  <section class="philosophy">
+    <!-- TODO: wstaw rzeczywisty cytat od Edyty — jej własne słowa, nie generowane -->
+    <blockquote>
+      &ldquo;[TODO: Cytat Edyty — jej własne zdanie o podejściu do pracy lub klientek. Autentyczne, konkretne.]&rdquo;
+    </blockquote>
+    <cite>— Edyta Pisanko, Ediline Studio</cite>
+  </section>
+
+  <!-- ══ CTA BAND ══════════════════════════════════════════════ -->
+  <div class="cta-band">
+    <h2>Poznajmy się<br><em>przy wizycie</em></h2>
+    <div class="cta-band-btns">
+      <a href="index.html#rezerwacja" class="btn btn-dark">Zarezerwuj wizytę</a>
+      <a href="galeria.html" class="btn btn-outline">Zobacz realizacje</a>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <a href="index.html" class="footer-logo">Ediline <em>Studio</em></a>
+    <nav class="footer-nav" aria-label="Nawigacja stopki">
+      <a href="uslugi.html">Usługi</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    </nav>
+    <div class="footer-right">
+      <p class="footer-copy">© 2025 Ediline Studio · Edyta Pisanko · Białystok</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/48TODO" class="wa-float" aria-label="Napisz na WhatsApp" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
