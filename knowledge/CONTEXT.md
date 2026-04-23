@@ -2,7 +2,6 @@
 
 > Przeczytaj ten plik na początku każdej sesji budowania strony.
 > Zawiera cel, klienta, wyróżnik i zasady copywritingu.
-> Przed każdą sesją: „przeczytaj briefing Ediline Studio, a potem zacznijmy [zadanie]"
 
 ---
 
@@ -12,9 +11,29 @@
 - **Właścicielka:** Edyta Pisanko
 - **Branża:** Stylizacja paznokci — specjalizacja: manicure tytanowy
 - **Lokalizacja:** Białystok (rynek lokalny)
-- **Typ strony:** Wizytówka + rezerwacja online (cennik + kalendarz zapisów)
-- **Główna akcja użytkownika:** umówienie wizyty online
+- **Typ strony:** Wizytówka + rezerwacja online (multi-page)
+- **Główna akcja użytkownika:** umówienie wizyty przez Fresha
 - **Social media:** Facebook: „Ediline Studio Tytanow" | Instagram: @edytapisanko
+- **Folder lokalny:** `C:\Users\Admin\Desktop\PROJEKTY\Ediline\`
+
+---
+
+## Status projektu (stan na kwiecień 2026)
+
+**Strona zbudowana** — struktura HTML/CSS/JS gotowa, wszystkie podstrony istnieją.
+Deploy jeszcze nie — czeka na dane od Edyty (telefon, adres, zdjęcia, bio, opinie).
+
+**Podjęte decyzje techniczne:**
+- Stack: HTML/CSS/JS vanilla (jak Verami.Studio i Medi-Dent)
+- Architektura: multi-page (`index.html` + `uslugi.html` + `galeria.html` + `o-mnie.html` + `polityka-prywatnosci.html`)
+- System rezerwacji: **Fresha** — embed gotowy, czeka na link profilu od Edyty
+- Header: transparent → scrolled przy scrollu
+- Domena docelowa: `edilinestudio.pl` (TBD — czy Edyta już ma)
+- Font: Cormorant Garamond (nagłówki) + DM Sans (treść)
+- Paleta: krem + złoto + ciemne tło — zgodnie z briefingiem
+
+**Co blokuje deploy:**
+Dane od Edyty — patrz `OPEN-ITEMS.md`
 
 ---
 
@@ -24,9 +43,6 @@ Manicure tytanowy to nisza: bardziej trwały i bezpieczny niż hybryda,
 bez lampy UV, bezpieczny w ciąży, dla alergiczek na żywice epoksydowe.
 
 **To jest główny argument sprzedażowy Edyty i musi być komunikowany wprost.**
-Nie chować specjalizacji — eksponować ją. Klientka która szuka tytanowego
-i trafi na stronę gdzie to jest jasno wyjaśnione, jest już w połowie przekonana.
-
 Rynek Białystok: 289+ salonów na Booksy. Wyróżnik tytanowy to jedyna
 realna nisza która pozwala nie walczyć ceną z masowym rynkiem.
 
@@ -34,68 +50,27 @@ realna nisza która pozwala nie walczyć ceną z masowym rynkiem.
 
 ## Idealny klient
 
-**Kim jest:** kobieta 25–45 lat z Białegostoku, aktywna, dbająca o siebie.
-
-**Jej konkretne powody żeby szukać tytanowego:**
-- Alergia na żywice w hybrydzie (najczęstszy powód)
-- Ciąża — hybryda wymaga lampy UV, tytanowy nie
-- Szuka trwałości — hybryda odpada po 2 tygodniach, tytanowy wytrzymuje 3–4
-
-**Jej strachy przy pierwszej wizycie:**
-- „Nie wiem czy tytanowy to dla mnie" → obalamy: sekcja edukacyjna na stronie + FAQ
-- „Nie znam tej stylistki" → obalamy: zdjęcia realizacji, opinie, sylwetka Edyty
-- „Nie wiem jak się umówić" → obalamy: booking widoczny od razu, już w nagłówku
-
-**Jak szuka:** Google Maps („manicure Białystok"), Instagram, Booksy, polecenia znajomych.
-
-**Co ją przekonuje do kliknięcia „rezerwuj":**
-zdjęcia realizacji + opinie z imionami + widoczna cena + łatwa rezerwacja.
-W branży beauty obraz decyduje, nie tekst — 80% zapamiętanych informacji
-to wrażenia wzrokowe.
-
----
-
-## Priorytety budowy strony
-
-Kolejność ważności — nie odwracać bez powodu:
-
-1. **Galeria zdjęć wysokiej jakości** — bez tego strona nie działa (+40% konwersja)
-2. **Widoczny booking online** — 67% klientek woli rezerwację online (+60% konwersja)
-3. **Cennik na stronie** — usuwa dwa największe hamulce przed rezerwacją
-4. **Opinie klientek** — decydujący trust signal w usługach personalnych
-5. **Mobile optimization** — 70%+ ruchu z telefonu w tej branży
+Kobieta 25–45 lat z Białegostoku. Szuka tytanowego z powodu alergii na hybrydy,
+ciąży lub potrzeby trwałości. Przekonuje ją: galeria + opinie + cena + łatwa rezerwacja.
 
 ---
 
 ## Zasady copywritingu
 
-### Ton
-Ciepły, kobieco-ekspercki — jak rozmowa z dobrą znajomą która zna się na rzeczy.
-Konkretny: czas trwania, trwałość, cena. Nie ogólniki.
+**Ton:** ciepły, kobieco-ekspercki. Konkretny — czas, trwałość, cena. Nie ogólniki.
 
-### Zakazane słowa
-`kompleksowy` · `profesjonalny` · `najwyższa jakość` · `pasja` · `zaangażowanie`
+**Zakazane słowa:** `kompleksowy` · `profesjonalny` · `najwyższa jakość` · `pasja` · `zaangażowanie`
 
-### Preferowane słowa
-`trwały` · `precyzyjny` · `bezpieczny` · `twój/twoje` · `zarezerwuj`
+**Preferowane słowa:** `trwały` · `precyzyjny` · `bezpieczny` · `twój/twoje` · `zarezerwuj`
 
-### Warianty nagłówka głównego (H1) — do przetestowania
-- „Paznokcie które nie odpadają — manicure tytanowy w Białymstoku"
-- „Trwała stylizacja bez lampy UV — Ediline Studio, Białystok"
-- „Ediline Studio — tam gdzie paznokcie wytrzymują wszystko"
-
-### Propozycja wartości (podtytuł hero)
-„Specjalizuję się w manicure tytanowym — trwalszym, bezpieczniejszym i łagodniejszym
-dla Twoich paznokci niż hybryda. Bez lampy UV. Bez alergii. Do 4 tygodni trwałości."
-
-Podtytuł skrócić do max 2 zdań: „Trwała stylizacja bez lampy UV — do 4 tygodni.
-Bezpieczna dla alergiczek i kobiet w ciąży."
+**H1 wybrany:** „Paznokcie które wytrzymają wszystko" + podtytuł:
+„Trwała stylizacja bez lampy UV — do 4 tygodni. Bezpieczna dla alergiczek i kobiet w ciąży."
 
 ---
 
 ## Gdzie szukać więcej
 
-- Struktura strony (9 sekcji), wymagania tech, SEO lokalne → `knowledge/ARCHITECTURE.md`
-- Estetyka, paleta, CTA rules, trust signals, błędy do uniknięcia → `knowledge/PATTERNS.md`
-- Dane blokujące, decyzje TBD → `knowledge/OPEN-ITEMS.md`
-- Przykłady stron, dane konwersji, źródła → `knowledge/Research.md`
+- Struktura plików, CSS, JS → `knowledge/ARCHITECTURE.md`
+- Paleta, CTA rules, trust signals, błędy → `knowledge/PATTERNS.md`
+- Dane do uzupełnienia, TODO → `knowledge/OPEN-ITEMS.md`
+- Dane konwersji, przykłady stron → `knowledge/Research.md`
